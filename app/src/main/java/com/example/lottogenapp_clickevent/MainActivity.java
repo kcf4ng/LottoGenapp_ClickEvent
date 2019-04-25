@@ -13,15 +13,23 @@ public class MainActivity extends Activity implements View.OnClickListener  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Button btnOK = findViewById(R.id.btnOK);
-        btnOK.setOnClickListener(this);
-
+        InitialComponent();
     }
+
 
     @Override
     public void onClick(View v) {
-        TextView x = findViewById(R.id.lblHello);
         x.setText(new CLottoGen().GetLotto());
     }
+
+    private void InitialComponent() {
+        x = findViewById(R.id.lblHello);
+        btnOK = findViewById(R.id.btnOK);
+        btnOK.setOnClickListener(this);
+    }
+
+
+    TextView x;
+    Button btnOK;
+
 }
